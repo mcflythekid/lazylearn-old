@@ -1,0 +1,14 @@
+RewriteEngine On
+#RewriteCond %{SERVER_PORT} 80 
+#RewriteRule ^(.*)$ https://www.lazylearn.com/$1 [R,L]
+RedirectMatch 404 /\.git
+RedirectMatch 404 /\.gitignore
+RewriteRule ^search$ /search.php
+RewriteRule ^login$ /login.php
+RewriteRule ^recovery$ /recovery.php
+RewriteRule ^signup$ /signup.php
+RewriteRule ^user/([0-9a-z]+)$ /user.php?id=$1
+RewriteRule ^user/([0-9a-z]+)/(.+)$ /flashcard/category.php?username=$1&id=$2
+RewriteRule ^flashcard/([0-9a-z\-]*)\-([\d]+)$ /flashcard/view.php?id=$2
+RewriteRule ^flashcard/([\d]+)$ /flashcard/view.php?id=$1
+RewriteRule ^res_([0-9]+)/(.+)$ /res/$2

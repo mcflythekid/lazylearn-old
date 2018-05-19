@@ -1,0 +1,12 @@
+# 127.0.0.1 lazylearn.localhost
+<VirtualHost *:80>
+	DocumentRoot "C:\app\project\lazylearn"
+	ServerName lazylearn.localhost
+	<Directory "C:\app\project\lazylearn">
+        Options Indexes FollowSymLinks
+        AllowOverride all
+        Order Deny,Allow
+        Allow from all
+        Require all granted
+	</Directory>
+</VirtualHost>

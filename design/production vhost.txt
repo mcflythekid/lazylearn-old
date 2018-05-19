@@ -1,0 +1,30 @@
+<VirtualHost *:80>
+	DocumentRoot "/var/www/lazylearn_com"
+	ServerName lazylearn.com
+	ServerAlias www.lazylearn.com
+	<Directory "/var/www/lazylearn_com">
+		Options Indexes FollowSymLinks
+        AllowOverride all
+        Order Deny,Allow
+        Allow from all
+        Require all granted
+	</Directory>
+</VirtualHost>
+
+<VirtualHost *:443>
+	DocumentRoot "/var/www/lazylearn_com"
+	ServerName lazylearn.com
+	ServerAlias www.lazylearn.com
+	<Directory "/var/www/lazylearn_com">
+		Options Indexes FollowSymLinks
+        AllowOverride all
+        Order Deny,Allow
+        Allow from all
+        Require all granted
+	</Directory>
+	SSLEngine on
+	SSLCertificateFile /var/ssl/lazylearn/ssl.cert
+	SSLCertificateKeyFile /var/ssl/lazylearn/ssl.key
+	SSLProtocol all -SSLv2 -SSLv3
+	SSLCACertificateFile /var/ssl/lazylearn/ssl.ca
+</VirtualHost>
